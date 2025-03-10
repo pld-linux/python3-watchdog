@@ -9,7 +9,7 @@ Summary:	Python API and shell utilities to monitor file system events
 Summary(pl.UTF-8):	API pythonowe i narzędzia powłoki do monitorowania zdarzeń systemu plików
 Name:		python3-watchdog
 Version:	2.3.1
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/watchdog/
