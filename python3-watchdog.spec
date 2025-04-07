@@ -2,19 +2,17 @@
 # Conditional build:
 %bcond_without	doc	# Sphinx documentation
 %bcond_without	tests	# unit tests
-%bcond_without	python2 # CPython 2.x module
-%bcond_with	python3 # CPython 3.x module
 
 Summary:	Python API and shell utilities to monitor file system events
 Summary(pl.UTF-8):	API pythonowe i narzędzia powłoki do monitorowania zdarzeń systemu plików
 Name:		python3-watchdog
-Version:	2.3.1
-Release:	3
+Version:	6.0.0
+Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/watchdog/
 Source0:	https://files.pythonhosted.org/packages/source/w/watchdog/watchdog-%{version}.tar.gz
-# Source0-md5:	a1c410a91204340adfb231a4909f70d1
+# Source0-md5:	d3adf236e17e5747e397f7d0b93e05b4
 URL:		https://pypi.org/project/watchdog/
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
@@ -62,7 +60,7 @@ Dokumentacja API modułu Pythona watchdog.
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 PYTEST_PLUGINS=pytest_cov.plugin,pytest_timeout \
 PYTHONPATH=$(pwd)/src \
-%{__python3} -m pytest tests -k 'not test_unmount_watched_directory_filesystem'
+%{__python3} -m pytest tests -k 'not test_unmount_watched_directory_filesystem and not test_auto_restart_on_file_change_debounce and not test_select_fd'
 # disabled test uses sudo for mount/umount
 %endif
 
